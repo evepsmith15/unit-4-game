@@ -1,2 +1,9 @@
 # unit-4-game
-Homework 4
+This game is similar to 21 where you try to get as close to the number the CPU picks while you don't go over the score.
+The gem stones have randomly generated numbers until the player clicks on them. 
+For an atmospheric experience, music is placed at the top of the header. The "fat Santa" taunts you on the right side of the screen meanwhile. 
+When the player wins, a familiar emerald theme is played. When you lose, you will be laughed and mocked by someone outside of Santa. 
+
+CSS messes around with the aesetic of the game. Black was the chosen theme due to give a nightime feel to the website. 
+
+Javascript has the code for the game. 
