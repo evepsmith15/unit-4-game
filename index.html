@@ -12,51 +12,56 @@
 </head>
 
 <body>
-
     <audio src="assets/Sonic 3 Music Ice Cap Zone Act 1.mp3" controls>
         <embed src="assets/Sonic 3 Music Ice Cap Zone Act 1.mp3" loop="true" hidden="true" autostart="true"></audio>
-        <div class="card">
-            <div class="card-body">
-                <h1>Crystal Collectors</h1>
+    <div class="card">
+        <div class="card-body">
+            <h1>Crystal Collectors</h1>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-bodymain">
+            <div id="paragraph">
+                <p>You will be given a random number at the start of the game.</p>
+                <p>There are four crystals below.
+                    By clicking on a crystal you will add a specific amount of points
+                    to your total score.</p>
+                <p>You win the game by matching your total score to random number,
+                    you lose the game if your score
+                    goes over the random number.</p>
+                <p>The value of each crystal is hidden from you until you click it.</p>
+                <p>Each time the game starts, the game will change the value of each crystal.</p>
             </div>
         </div>
-        <div class="card">
-            <div class="card-bodymain">
-                <div id="paragraph">
-                    <p>You will be given a random number at the start of the game.</p>
-                    <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points
-                        to
-                        your
-                        total
-                        score.</p>
-                    <p>You win the game by matching your total score to random number, you lose the game if your score
-                        goes
-                        over the
-                        random number.</p>
-                    <p>The value of each crystal is hidden from you until you click it.</p>
-                    <p>Each time the game starts, the game will change the value of each crystal.</p>
-                </div>
+    </div>
+    <div id="container">
+        <p> <span id="Emerald Value">0</span></p>
+    </div>
+    <div id="game">
+        <p>Wins: <span id="win">0</span></p>
+        <p>Losses: <span id="losses">0</span></p>
+    </div>
+    <p><button type="buttonRed" class="btn btn-black"><img src="assets/images/Red Emerald.png"></button>
+        <button type="buttonBlue" class="btn btn-black"><img src="assets/images/Blue Emerald.png"></button>
+        <button type="buttonYellow" class="btn btn-black"><img src="assets/images/Yellow Emerald.png"></button>
+        <button type="buttonGreen" class="btn btn-black"><img src="assets/images/Green Emerald.png"></button>
+    </p>
+    <div class="card">
+        <div class="card-bodylast">
+            <div id="totalScore">
+                <p> <span id="total">0</span></p>
             </div>
         </div>
-        <div id="container">
-            <p> <span id="Emerald Value"></p>
-        </div>
-        <div id="game">
-            <p>Wins: <span id="win">0</span></p>
-            <p>Losses: <span id="losses">0</span></p>
-        </div>
-        <p><button type="buttonRed" class="btn btn-black"><img src="assets/images/Red Emerald.png"></button>
-            <button type="buttonBlue" class="btn btn-black"><img src="assets/images/Blue Emerald.png"></button>
-            <button type="buttonYellow" class="btn btn-black"><img src="assets/images/Yellow Emerald.png"></button>
-            <button type="buttonGreen" class="btn btn-black"><img src="assets/images/Green Emerald.png"></button>
-        </p>
-        <div class="card">
-            <div class="card-bodylast">
-                <div id="totalScore">
-                    <p> <span id="total">0</span></p>
-                </div>
-            </div>
-        </div>
+    </div>
+    <script src="assets/javascript/game.js"></script>
+    <audio id="SoundClipsWin">
+        <source src="./assets/chaos-emerald.mp3" type="audio/mp3" autoplay>
+        </source>
+    </audio>
+    <audio id="SoundsClipsLosses">
+        <source src="./assets/tiduss-laugh.mp3" type="audio/mp3" autoplay>
+        </source>
+    </audio>
 
 </body>
 

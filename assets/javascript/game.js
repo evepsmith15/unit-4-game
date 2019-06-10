@@ -1,97 +1,104 @@
 $(document).ready(function () {
 
     //variable list
-    var random; //random number
-    var desultory = []; //another word for random. CPU Array 
-    var randomC = []; //random crystal number 
+    var desultory;
     var win = 0;
     var losses = 0;
     var total = 0; //user's score
-    var blue = 0;
-    var red = 0;
-    var green = 0;
-    var yellow = 0;
     var CPUNumber; //number to match 
+    var emeralds = { //instead of having 4 different variables, all respond to one 
+        red: {
+            name: "Red",
+            value: 0
+        },
+        blue: {
+            name: "Blue",
+            value: 0
+        },
+        yellow: {
+            name: "Yellow",
+            value: 0
+        },
+        green: {
+            name: "Green",
+            value: 0
+        },
+    };
+
+    //----------------------------------------------
 
     //code to randomly generate a number
-    CPUNumber = Math.floor((Math.random() * 100) + 1);
-    console.log("CPUNumber" + CPUNumber);
+    CPUNumber = function (min, max) { //takes a minium and maximum number
+        return Math.floor(Math.random() * (max - min + 1)) + min; //prevents the number from being 0
+    };
 
+    //target score 
+    desultory = function (min, max) { //takes a minium and maximum number
+        return Math.floor(Math.random() * (max - min + 1)) + min; //prevents the number from being 0
+    };
 
-    function Randomize(arr) {
-        var r = arr[Math.floor(Math.random() * arr.length)];
-        random = r;
-        console.log("random number: " + random);
-    }
+    playAudio = function() {
 
-    //randomly generates a number for 4 arrays
-    function RandomizeR(arr) {
-        for (var k = 0; k < 4; k++) { //array only goes up to 4
-            var c = arr[Math.floor(Math.random() * arr.length)];
-            randomC.push(c);
-        }
-    }
+    };
+
+    //starts the game
+    var Start = function () {
+        total = 0;
+        desultory = (30, 150); //range for the main score
+        emeralds.red.value = CPUNumber(1, 10);
+        emeralds.blue.value = CPUNumber(1, 10);
+        emeralds.yellow.value = CPUNumber(1, 10);
+        emeralds.green.value = CPUNumber(1, 10);
+        $("#total").text(total);
+        $("#Emerald Value").text(CPUNumber);
+    };
+
     //code to give the crystals a random number
-    function Value(arr) {
-        for (var v = 0; v < arr.length; v++) {
-            $("#button" + (v + 1).attr("value", arr[v])); //makes sure each value is different
-        }
-        red[0];
-        blue[1];
-        yellow[2];
-        green[3];
-    }
+    var addValue = function (clickEmerald) {
+        total += clickEmerald.value;
+        $("#total").text(total);
+        WinLose();
+        console.log("Score: " + total);
+    };
 
-    Randomize(desultory);
-    RandomizeR(crystals);
-    Value(randomC);
-    //code to give crystals a button 
-
-    $("#buttonRed").on("click", function () {
-        total += red;
-        $("#total").html(total);
-    });
-    $("#buttonBlue").on("click", function () {
-        total += blue;
-        $("#total").html(total);
-    });
-    $("#buttonYellow").on("click", function () {
-        total += yellow;
-        $("#total").html(total);
-    });
-    $("#buttonGreen").on("click", function () {
-        total += green;
-        $("#total").html(total);
-    });
-
-    //reset values to 0
-    function Reset(r) {
-        randomC = [];
-        Randomize(desultory);
-        RandomizeR(crystals);
-        Value(randomC);
-        totalScore = 0;
-        $("#totalNumber").html(totalScore);
-        alert(r);
-
-    }
 
     //win/lose condition
-    $("button").on("click", function () {
+    var WinLose = function () {
+        var w = document.getElementById(SoundClipsWin);
+        var l = document.getElementById(SoundClipLosses);
         if (total === CPUNumber) {
             win++;
             console.log(total);
-            $("#total").html(total);
-            $("#wins").html("Wins: " + win);
-            <audio src=".\assets\chaos-emerald.mp3"></audio>
+            $("#total").text(total);
+            $("#wins").text("Wins: " + win);
+            function playAudio() {
+                w.play();
+            }
+            Start();
         }
         else if (total > CPUNumber) {
             losses++;
             console.log(total);
-            $("#total").html(total);
-            $("#losses").html("Losses: " + losses);
-            <audio src=".\assets\tiduss-laugh.mp3"></audio>
+            $("#total").text(total);
+            $("#losses").text("Losses: " + losses);
+            function playAudio() {
+                l.play();
+            }
+            Start();
         }
-
+    };
+    Start();
+    $("#buttonRed").on("click", function () {
+        addValue(Emerald.red);
     });
+    $("#buttonBlue").on("click", function () {
+        addValue(Emerald.blue);
+    });
+    $("#buttonYellow").on("click", function () {
+        addValue(Emerald.yellow);
+    });
+    $("#buttonGreen").on("click", function () {
+        addValue(Emerald.green);
+    });
+
 });
