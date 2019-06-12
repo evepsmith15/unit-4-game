@@ -57,8 +57,10 @@ $(document).ready(function () {
         emeralds.yellow.value = CPUNumber(1, 10);
         emeralds.green.value = CPUNumber(1, 10);
         $("#total").text(total);
-        $("#Emerald Value").text(desultory);
+        $("#EmeraldValue").text(desultory);
+
         console.log("Emerald Value: " + desultory);
+
     };
 
     //code to give the crystals a random number
