@@ -38,13 +38,15 @@ $(document).ready(function () {
         return Math.floor(Math.random() * (max - min + 1)) + min; //prevents the number from being 0
     };
 
-    var playAudioWin = new Audio('./assets/Sonic 3 Music Ice Cap Zone Act 1.mp3');
+    var playAudioWin = new Audio();
+    playAudioWin.src = './assets/Sonic 3 Music Ice Cap Zone Act 1.mp3';
     //var w = document.getElementById("SoundClipsWin");
     //var l = document.getElementById("SoundClipLosses");
-    playAudioWin.play();
+    //playAudioWin.play();
 
-    var playAudioLose = new Audio('./assets/tiduss-laugh.mp3');
-    playAudioLose.play();
+    var playAudioLose = new Audio();
+    playAudioLose.src = './assets/tiduss-laugh.mp3';
+    //playAudioLose.play();
 
     //starts the game
     var Start = function () {
@@ -76,7 +78,7 @@ $(document).ready(function () {
             console.log(total);
             $("#total").text(total);
             $("#win").text(win);
-            playAudioWin();
+            playAudioWin.play();
             Start();
         }
         else if (total > desultory) {
@@ -84,7 +86,7 @@ $(document).ready(function () {
             console.log(total);
             $("#total").text(total);
             $("#losses").text(losses);
-            playAudioLose();
+            playAudioLose.play();
             Start();
         }
     };
