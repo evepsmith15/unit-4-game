@@ -10,3 +10,6 @@ Javascript has the code for the game.
 
 UPDATE: 
 I re-wrote the js script. I tried to use only one function but that meant the game wouldn't start or reconize the code for index. So I changed it to where more functions are used and call each other in order for the game to function. 
+
+UPDATE 2: 
+I was having problems with my github so my tutor was showing me how he did it on his share screen. This is why he is listed as a contributor. The game now functions. 
