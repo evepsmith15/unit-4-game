@@ -1,0 +1,58 @@
+body {
+    background-color: black;
+    background-image: url(../images/tumblr_pckiqbzsqc1w1kerio1_500.gif);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    z-index: 1;
+    margin: 0;
+}
+
+.card {
+    border-color: black;
+}
+
+.card-body {
+    background-image: url(../images/Rainbow\ Background.jpg)
+}
+
+.card-bodymain {
+    background-color: black;
+}
+.card-bodylast {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+}
+
+#paragraph {
+    color: green;
+    font-size: 20px;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+button {
+    background-color: black;
+}
+    
+#container {
+    color: purple;
+
+}
+
+#game {
+    color: purple;
+}
+
+#totalScore {
+    color: white;
+}
+
+audio {
+    width: 100%;
+}
