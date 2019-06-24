@@ -6,7 +6,6 @@ $(document).ready(function () {
     var losses = 0;
     var total = 0; //user's score
     var CPUNumber; //number to match 
-    var aud = null;
     var emeralds = { //instead of having 4 different variables, all respond to one 
         red: {
             name: "Red",
@@ -39,14 +38,10 @@ $(document).ready(function () {
     };
 
     var playAudioWin = new Audio();
-    playAudioWin.src = './assets/Sonic 3 Music Ice Cap Zone Act 1.mp3';
-    //var w = document.getElementById("SoundClipsWin");
-    //var l = document.getElementById("SoundClipLosses");
-    //playAudioWin.play();
+    playAudioWin.src = './assets/chaos-emerald.mp3';
 
     var playAudioLose = new Audio();
     playAudioLose.src = './assets/tiduss-laugh.mp3';
-    //playAudioLose.play();
 
     //starts the game
     var Start = function () {
@@ -58,9 +53,7 @@ $(document).ready(function () {
         emeralds.green.value = CPUNumber(1, 10);
         $("#total").text(total);
         $("#EmeraldValue").text(desultory);
-
-        console.log("Emerald Value: " + desultory);
-
+        console.log("EmeraldValue: " + desultory);
     };
 
     //code to give the crystals a random number
@@ -71,15 +64,13 @@ $(document).ready(function () {
         console.log("Score: " + total);
     };
 
-
     //win/lose condition
     var WinLose = function () {
-
         if (total === desultory) {
             win++;
             console.log(total);
             $("#total").text(total);
-            $("#win").text(win);
+            $("#win").text(" " + win);
             playAudioWin.play();
             Start();
         }
@@ -87,11 +78,12 @@ $(document).ready(function () {
             losses++;
             console.log(total);
             $("#total").text(total);
-            $("#losses").text(losses);
+            $("#losses").text(" " + losses);
             playAudioLose.play();
             Start();
         }
     };
+
     Start();
     $("#buttonRed").on("click", function () {
         addValue(emeralds.red);
